@@ -1,0 +1,75 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/dark_green</item>
+        <item name="colorAccent">@color/aqua</item>
+        <item name="android:colorBackground">@color/light_grey</item>
+        <item name="android:textColor">@color/common_text_color</item>
+        <item name="android:textColorPrimary">@color/common_text_color</item>
+        <item name="android:textColorHighlight">@color/red</item>
+        <item name="android:textColorHint">@color/white_smoke</item>
+        <item name="colorButtonNormal">@color/aqua</item>
+        <item name="imageButtonStyle">@style/common_btns_style</item>
+    </style>
+
+    <style name="AppTheme.Green" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimary_ThemeGreen</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_ThemeGreen</item>
+        <item name="colorAccent">@color/colorAccent_ThemeGreen</item>
+    </style>
+
+    <style name="AppTheme.Blue" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimary_ThemeBlue</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_ThemeBlue</item>
+        <item name="colorAccent">@color/colorAccent_ThemeBlue</item>
+    </style>
+
+    <style name="AppTheme.Red" parent="AppTheme">
+        <item name="colorPrimary">#ff5858</item>
+        <item name="colorPrimaryDark">#ff5252</item>
+        <item name="colorAccent">#f857a6</item>
+    </style>
+
+    <style name="main_button_style" parent="@android:style/Widget.ImageButton">
+        <item name="android:layout_margin">@dimen/main_btn_margin</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="common_btns_style" parent="@android:style/Widget.ImageButton">
+        <item name="android:layout_marginLeft">@dimen/small_margin_horizontal</item>
+        <item name="android:layout_marginRight">@dimen/small_margin_horizontal</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:clickable">false</item>
+        <item name="android:layout_width">@dimen/commnon_btns_size</item>
+        <item name="android:layout_height">@dimen/commnon_btns_size</item>
+    </style>
+
+    <style name="common_tv_style">
+        <item name="android:textSize">@dimen/common_text_size</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+    </style>
+
+    <style name="menu_tv_style">
+        <item name="android:textSize">@dimen/menu_title_text_size</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+    </style>
+
+    <style name="common_error_tv_style" parent="common_tv_style">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="search_bar_style" parent="Widget.AppCompat.SearchView">
+        <item name="closeIcon">@drawable/ic_close</item>
+        <item name="searchIcon">@drawable/ic_search</item>
+        <item name="searchHintIcon">@drawable/ic_search</item>
+    </style>
+
+</resources>

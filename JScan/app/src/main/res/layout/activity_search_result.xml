@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/main_activity_header_bg">
+
+    <fragment
+            android:id="@+id/fr_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            class="com.jscandic.uit.jscandictionary.CustomActionBarFragment"/>
+
+    <TextView
+            android:id="@+id/tv_word_is_not_found"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/medium_margin_horizontal"
+            android:text="This word is not found!"
+            android:background="@color/white_smoke"
+            android:visibility="gone"
+            style="@style/common_error_tv_style"/>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcv_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/medium_margin_horizontal"
+            android:scrollbars="vertical"
+            android:background="@color/white_smoke">
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

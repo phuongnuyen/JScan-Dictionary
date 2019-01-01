@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/small_margin_vertical">
+
+        <ImageButton
+                android:id="@+id/ibtn_back"
+                android:layout_width="@dimen/commnon_btns_size"
+                android:layout_height="@dimen/commnon_btns_size"
+                android:src="@drawable/ic_back"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                style="@style/common_btns_style"/>
+
+        <ImageButton
+                android:id="@+id/ibtn_home"
+                android:layout_width="@dimen/commnon_btns_size"
+                android:layout_height="@dimen/commnon_btns_size"
+                android:src="@drawable/ic_home"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ibtn_back"
+                android:alpha="0.8"
+                style="@style/common_btns_style"/>
+
+        <android.support.v7.widget.SearchView
+                android:id="@+id/search_view"
+                app:queryHint="@string/search_hint"
+                android:layout_width="wrap_content"
+                android:maxWidth="@dimen/search_view_max_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ibtn_home"
+                style="@style/search_bar_style"/>
+
+        <TextView
+                android:id="@+id/tv_title"
+                android:text="aiwhfdjslkj"
+                android:layout_width="wrap_content"
+                android:maxWidth="@dimen/search_view_max_width"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/medium_margin_horizontal"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="@dimen/title_text_size"
+                android:textAllCaps="true"
+                android:layout_toRightOf="@+id/ibtn_home"
+                android:layout_centerVertical="true" />
+
+        <ImageButton
+                android:id="@+id/ibtn_bin"
+                android:layout_width="@dimen/commnon_btns_size"
+                android:layout_height="@dimen/commnon_btns_size"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_bin"
+                android:padding="3dp"
+                style="@style/common_btns_style"
+                android:visibility="gone"/>
+
+        <CheckBox
+                android:id="@+id/cb_favorite"
+                android:layout_width="@dimen/commnon_btns_size"
+                android:layout_height="@dimen/commnon_btns_size"
+                android:layout_marginLeft="@dimen/small_margin_horizontal"
+                android:layout_marginRight="@dimen/medium_margin_horizontal"
+                android:checked="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="3dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/custom_favorite_cb"
+                android:button="@null"
+        />
+    </RelativeLayout>
+</RelativeLayout>
