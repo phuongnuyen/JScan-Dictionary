@@ -2,6 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.jscandic.uit.jscandictionary">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature
+            android:name="android.hardware.camera"
+            android:required="false" />
+    <uses-feature
+            android:name="android.hardware.camera.autofocus"
+            android:required="false" />
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -16,10 +30,31 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.jscandic.uit.jscandictionary.SearchResultActivity"
+        <activity android:name=".SearchResultActivity"
                   android:screenOrientation="portrait"
                   android:label="@string/search_result_title">
         </activity>
+
+        <activity android:name=".DetailActivity"
+                  android:screenOrientation="portrait"
+                  android:label="@string/search_result_title">
+        </activity>
+
+        <activity android:name=".InfoActivity"
+                  android:screenOrientation="portrait"
+                  android:label="@string/infomation_title">
+        </activity>
+
+        <activity android:name=".SettingActivity"
+                  android:screenOrientation="portrait"
+                  android:label="@string/infomation_title">
+        </activity>
+
+        <provider
+                android:name=".Database.DictContentProvider"
+                android:authorities="com.jscandic.uit.jscandictionary.Database"
+                android:enabled="true"
+                android:exported="false"/>
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.support.annotation.Nullable;
@@ -41,8 +42,9 @@ public class DictContentProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         databaseAccess = DatabaseAccess.getInstance(getContext());
-        return true; // ContentProvider successfully created
+        return true;
     }
+
 
     // required method: Not used in this app, so we return null
     @Override
@@ -115,7 +117,7 @@ public class DictContentProvider extends ContentProvider {
         return result;
     }
 
-    // query the database
+    // query the databases
     @Override
     public Cursor query(Uri uri, String[] projection,
                         String selection, String[] selectionArgs, String sortOrder) {
@@ -161,7 +163,7 @@ public class DictContentProvider extends ContentProvider {
 
 
 
-    // update an existing contact in the database
+    // update an existing contact in the databases
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
         int result = 0;

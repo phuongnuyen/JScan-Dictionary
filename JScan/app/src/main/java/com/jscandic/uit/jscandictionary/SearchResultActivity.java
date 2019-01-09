@@ -14,7 +14,8 @@ import android.view.View;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import com.jscandic.uit.jscandictionary.Database.DatabaseDescription;
+
+import static com.jscandic.uit.jscandictionary.Database.DatabaseDescription.*;
 
 public class SearchResultActivity extends BaseActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -62,9 +63,9 @@ public class SearchResultActivity extends BaseActivity implements LoaderManager.
                 new DictionaryAdapter.DictClickListener() {
                     @Override
                     public void onClick(Uri contactUri) {
-//                        Intent intent = new Intent(getBaseContext(), DetailActivity.class);
-//                        intent.putExtra(MainActivity.WORD_URI, contactUri);
-//                        startActivity(intent);
+                        Intent intent = new Intent(getBaseContext(), DetailActivity.class);
+                        intent.putExtra(MainActivity.WORD_URI, contactUri);
+                        startActivity(intent);
                     }
                 }
         );
@@ -78,7 +79,7 @@ public class SearchResultActivity extends BaseActivity implements LoaderManager.
     private SearchView.OnQueryTextListener svLookUpWordChangeListener = new SearchView.OnQueryTextListener() {
         @Override
         public boolean onQueryTextSubmit(String query) {
-            uriSearch = DatabaseDescription.Dictionary.buildContactUri(query);
+            uriSearch = Dictionary.buildContactUri(query);
             getSupportLoaderManager().restartLoader(DICT_LOADER_A, null, SearchResultActivity.this);
 
             return false;
@@ -89,7 +90,7 @@ public class SearchResultActivity extends BaseActivity implements LoaderManager.
             if(newText.length() == 0)
                 getSupportLoaderManager().initLoader(DICT_LOADER_ALL, null, SearchResultActivity.this);
             else{
-                uriSearch = DatabaseDescription.Dictionary.buildContactUri(newText);
+                uriSearch = Dictionary.buildContactUri(newText);
                 getSupportLoaderManager().restartLoader(DICT_LOADER_A, null, SearchResultActivity.this);
             }
             return false;
@@ -108,16 +109,16 @@ public class SearchResultActivity extends BaseActivity implements LoaderManager.
                         null, // null projection returns all columns
                         null, // null selection returns all rows
                         null, // no selection arguments
-                        DatabaseDescription.Dictionary.COLUMN_WORD +
+                        Dictionary.COLUMN_WORD +
                                 " COLLATE NOCASE ASC"); // sort order
             case DICT_LOADER_ALL:
                 return new CursorLoader(
                         this,
-                        DatabaseDescription.Dictionary.CONTENT_URI, // Uri of contacts table
+                        Dictionary.CONTENT_URI, // Uri of contacts table
                         null, // null projection returns all columns
                         null, // null selection returns all rows
                         null, // no selection arguments
-                        DatabaseDescription.Dictionary.COLUMN_WORD +
+                        Dictionary.COLUMN_WORD +
                                 " COLLATE NOCASE ASC");
             default:
                 return null;

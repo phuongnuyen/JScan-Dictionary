@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JScan</string>
+
+
+    <!-- MainActivity -->
+    <string name="title_activity_main">Từ điển Nhật ngữ</string>
+    <!-- Names of Main btns-->
+    <string name="btn_ocr_name">Quét OCR</string>
+    <string name="btn_quiz_name">Đố vui</string>
+    <string name="btn_multi_translate_name">Dịch nghĩa</string>
+    <string name="btn_favorite_name">Yêu thích</string>
+    <string name="btn_setting_name">Cài đặt</string>
+    <string name="btn_info_name">Thông tin</string>
+
+
+    <!-- OCRActivity -->
+    <string name="ocr_title">Quét chữ OCR</string>
+    <string name="button_text">OCR!</string>
+    <string name="text_hint">OCRed Text will appear here</string>
+
+    <!-- CustomActionBar -->
+    <string name="search_hint">"Bạn muốn tra từ gì?"</string>
+
+    <!-- TranslateActivity -->
+    <string name="multi_translate_title">Dịch nghĩa</string>
+
+    <!-- FavoriteActivity -->
+    <string name="favorite_title">Yêu thích</string>
+    <string name="confirm_delete_all">Bạn có chắc muốn xóa hết toàn bộ?</string>
+    <string name="favorite_words_is_empty">Không có dữ liệu.</string>
+
+    <!-- Setting Activity -->
+    <string name="setting_title">Cài đặt</string>
+    <string name="app_theme_option_text">Chủ đề giao diện</string>
+    <string name="language_option_text">Ngôn ngữ</string>
+
+    <!-- DetailActivity -->
+    <!--<string name="sample_large_string">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."</string>-->
+    <string name="sample_large_string">""</string>
+    <string name="sample_title_string">"What is lorem ipsum?"</string>
+    <string name="detail_title">Chi tiết</string>
+    <string name="pronunciation">Phát âm</string>
+    <string name="synonymous">Từ đồng nghĩa</string>
+    <string name="english">Nghĩa Anh</string>
+    <string name="vietnamese">Nghĩa Việt</string>
+    <string name="example">Ví dụ mẫu</string>
+    <string name="save_successfully">Đã thêm vào danh sách yêu thích thành công!</string>
+    <string name="remove_favorite">Đã xóa khỏi danh sách yêu thích</string>
+    <string name="save_unsuccessfully">Có lỗi xãy ra...</string>
+
+    <!-- InfomationActivity -->
+    <string name="infomation_title">Thông tin ứng dụng</string>
+    <string name="pre_market_uri">"market://details?id="</string>
+    <string name="pre_google_play_uri">"http://play.google.com/store/apps/details?id="</string>
+    <string name="fanpage_url">"https://www.facebook.com/pg/JScan-T%%E1%%BB%%AB-%%C4%%91i%%E1%%BB%%83n-v%%C3%%A0-OCR-ti%%E1%%BA%%BFng-Nh%%E1%%BA%%ADt-1712671182359298/about/?ref=page_internal"</string>
+
+    <!-- QuizActivity -->
+    <string name="quiz_title">Đố vui</string>
+    <string name="title_reading_quiz_text">Nhìn nghĩa đoán từ</string>
+    <string name="title_listening_quiz_text">Nghe và đoán từ</string>
+    <string name="quiz_submit_hint">"Đáp án của bạn là gì?"</string>
+    <string name="your_score_text">Điểm</string>
+
+    <!-- DictContentProvider-->
+    <string name="invalid_query_uri">Invalid query Uri: </string>
+    <string name="invalid_insert_uri">Invalid insert Uri: </string>
+    <string name="invalid_update_uri">Invalid update Uri: </string>
+    <string name="invalid_delete_uri">Invalid delete Uri: </string>
+    <string name="insert_failed">SQLException in inserting</string>
+
+    <!-- SearchResultActivity-->
+    <string name="not_found"> không tìm thấy</string>
+    <string name="search_result_title">Kết quả tìm kiếm</string>
+
+
+    <!-- Others -->
+
+
+
+    <!-- Temp (It will be deleted late) -->
+    <string name="textspeech">TextSpeech</string>
+    <string name="addtofavoritelist">AddToFavoriteList</string>
+    <string name="empty_data"> </string>
+    <string name="next">Next</string>
+    <string name="speaker">Click to speak word</string>
+    <string name="revision_reset">Reset revision</string>
+    <string name="exit">Exit</string>
+    <string name="index_question">%1$d / %2$d</string>
+    <string name="revision_score">Score: %1$d</string>
+    <string name="revision_result">%1$d guesses, %2$.02f%% correct</string>
+    <string name="correct_answer">Correct answer: %1$s</string>
+    <string name="correct">Correct!</string>
+    <string name="num_of_words">(%1$d)</string>
+    <string name="empty_word">The word should not be empty</string>
+
+</resources>

@@ -100,13 +100,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
 
             case R.id.btn_setting:
-//                intent = new Intent(this, SettingActivity.class);
-//                startActivity(intent);
+                intent = new Intent(this, SettingActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.btn_info:
-//                intent = new Intent(this, InfomationActivity.class);
-//                startActivity(intent);
+                intent = new Intent(this, InfoActivity.class);
+                startActivity(intent);
                 break;
         }
     }

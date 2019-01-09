@@ -6,7 +6,7 @@ import android.provider.BaseColumns;
 public class DatabaseDescription {
     // ContentProvider's name: typically the package name
     public static final String AUTHORITY =
-            "com.deep.jscandictionary.database";
+            "com.jscandic.uit.jscandictionary.Database";
 
     // base URI used to interact with the ContentProvider
     private static final Uri BASE_CONTENT_URI =

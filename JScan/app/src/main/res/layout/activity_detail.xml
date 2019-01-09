@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical" android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/main_activity_header_bg">
+
+    <fragment
+            android:id="@+id/fr_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            class="com.jscandic.uit.jscandictionary.CustomActionBarFragment"/>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white_smoke">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/medium_margin_horizontal"
+                android:layout_marginRight="@dimen/medium_margin_horizontal">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/activity_detail_rect_bg"
+                    android:padding="@dimen/medium_margin_horizontal"
+                    android:layout_marginTop="@dimen/large_margin_vertical">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                    <TextView
+                            android:text="@string/pronunciation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/sub_title_text_size"
+                            android:textColor="?colorAccent"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:textAllCaps="true"/>
+
+                    <ImageButton
+                            android:id="@+id/ibtn_speaker"
+                            android:layout_width="@dimen/speaker_btn_icon_size"
+                            android:layout_height="@dimen/speaker_btn_icon_size"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/medium_margin_horizontal"
+                            android:src="@drawable/ic_volume"
+                            style="@style/common_btns_style"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!-- Synonymous -->
+            <LinearLayout
+                    android:id="@+id/ln_synonymous"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/activity_detail_rect_bg"
+                    android:padding="@dimen/medium_margin_horizontal"
+                    android:layout_marginTop="@dimen/large_margin_vertical">
+
+                <TextView
+                        android:text="@string/synonymous"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sub_title_text_size"
+                        android:textColor="?colorAccent"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
+                        android:textAllCaps="true"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/medium_margin_vertical"
+                        android:layout_marginBottom="@dimen/medium_margin_vertical"
+                        android:background="@color/colorPrimaryLine"/>
+
+                <TextView
+                        android:id="@+id/tv_synonymous"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_large_string"
+                        style="@style/common_tv_style"/>
+            </LinearLayout>
+
+
+            <!--English meaning-->
+            <LinearLayout
+                    android:id="@+id/ln_english_meaning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/activity_detail_rect_bg"
+                    android:padding="@dimen/medium_margin_horizontal"
+                    android:layout_marginTop="@dimen/large_margin_vertical">
+
+                <TextView
+                        android:text="@string/english"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sub_title_text_size"
+                        android:textColor="?colorAccent"
+                        android:textStyle="bold"
+                        android:textAllCaps="true" />
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/medium_margin_vertical"
+                        android:layout_marginBottom="@dimen/medium_margin_vertical"
+                        android:background="@color/colorPrimaryLine"/>
+
+                <TextView
+                        android:id="@+id/tv_english_meaning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_large_string"/>
+            </LinearLayout>
+
+            <!--Vietnamese meaning-->
+            <LinearLayout
+                    android:id="@+id/ln_vietnamese_meaning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/activity_detail_rect_bg"
+                    android:padding="@dimen/medium_margin_horizontal"
+                    android:layout_marginTop="@dimen/large_margin_vertical">
+
+                <TextView
+                        android:text="@string/vietnamese"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sub_title_text_size"
+                        android:textColor="?colorAccent"
+                        android:textStyle="bold"
+                        android:textAllCaps="true" />
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/medium_margin_vertical"
+                        android:layout_marginBottom="@dimen/medium_margin_vertical"
+                        android:background="@color/colorPrimaryLine"/>
+
+                <TextView
+                        android:id="@+id/tv_vietnamese_meaning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_large_string"/>
+            </LinearLayout>
+
+            <!--Example-->
+            <LinearLayout
+                    android:id="@+id/ln_example"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/activity_detail_rect_bg"
+                    android:padding="@dimen/medium_margin_horizontal"
+                    android:layout_marginTop="@dimen/large_margin_vertical"
+                    android:visibility="gone">
+
+                <TextView
+                        android:text="@string/example"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sub_title_text_size"
+                        android:textColor="?colorAccent"
+                        android:textStyle="bold"
+                        android:textAllCaps="true" />
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/medium_margin_vertical"
+                        android:layout_marginBottom="@dimen/medium_margin_vertical"
+                        android:background="@color/colorPrimaryLine"/>
+
+                <TextView
+                        android:id="@+id/tv_example"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_large_string"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
