@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/ln_submit"
+        android:background="@color/white_smoke">
+        <ImageView
+            android:id="@+id/iv_speaker"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_play"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="@dimen/small_margin_vertical"
+        android:paddingBottom="@dimen/small_margin_vertical"
+        android:paddingLeft="@dimen/medium_margin_horizontal"
+        android:paddingRight="@dimen/medium_margin_horizontal"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edt_answer"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="@string/quiz_submit_hint"
+            android:textColor="@color/dim_grey"
+            android:textSize="@dimen/sub_title_text_size"
+            android:maxLines="1"
+            android:layout_gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/ibtn_submit"
+            android:layout_width="@dimen/quiz_submit_btn_size"
+            android:layout_height="@dimen/quiz_submit_btn_size"
+            android:tint="?colorAccent"
+            android:src="@drawable/ic_submit"
+            android:layout_gravity="center"
+            style="@style/common_btns_style"/>
+    </LinearLayout>
+
+
+    <!-- Score & question number -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin_vertical"
+        android:layout_toLeftOf="@+id/rl_score"
+        android:layout_marginRight="-20dp">
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/question_number_bg"
+            android:alpha="0.86"/>
+
+        <TextView
+            android:id="@+id/tv_question_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/small_text_size"
+            android:text=""
+            android:textColor="@color/red"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/v_score_bg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/score_bg"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/small_margin_horizontal"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_score"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/small_margin_horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="@string/your_score_text"
+                android:layout_marginBottom="@dimen/small_margin_vertical"
+                android:textSize="@dimen/small_text_size"
+                style="@style/common_tv_style"/>
+
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/score_text_size"
+                android:text="0" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

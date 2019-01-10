@@ -15,6 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.gelitenight.waveview.library.WaveView;
 import com.jscandic.uit.jscandictionary.Helper.WaveHelper;
+import com.jscandic.uit.jscandictionary.Quiz.QuizActivity;
 import com.jscandic.uit.jscandictionary.Utils.ThemeUtils;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -39,10 +40,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     LinearLayout btnMultiLineTranslate;
     @BindView(R.id.btn_favorite)
     LinearLayout btnFavorite;
-    @BindView(R.id.btn_info)
-    LinearLayout btnInfo;
-    @BindView(R.id.btn_setting)
-    LinearLayout btnSetting;
+//    @BindView(R.id.btn_info)
+//    LinearLayout btnInfo;
+//    @BindView(R.id.btn_setting)
+//    LinearLayout btnSetting;
 
     //  bind below views to change color
     @BindView(R.id.ibtn_ocr)
@@ -53,10 +54,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     ImageButton ibtnQuiz;
     @BindView(R.id.ibtn_favorite)
     ImageButton ibtnFavorite;
-    @BindView(R.id.ibtn_setting)
-    ImageButton ibtnSetting;
-    @BindView(R.id.ibtn_info)
-    ImageButton ibtnInfo;
+//    @BindView(R.id.ibtn_setting)
+//    ImageButton ibtnSetting;
+//    @BindView(R.id.ibtn_info)
+//    ImageButton ibtnInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +71,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         btnQuiz.setOnClickListener(this);
         btnMultiLineTranslate.setOnClickListener(this);
         btnFavorite.setOnClickListener(this);
-        btnSetting.setOnClickListener(this);
-        btnInfo.setOnClickListener(this);
+//        btnSetting.setOnClickListener(this);
+//        btnInfo.setOnClickListener(this);
         searchView.setOnQueryTextListener(searchViewOnQueryTextListener);
     }
 
@@ -80,34 +81,34 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Intent intent;
         switch (view.getId()){
             case R.id.btn_ocr:
-//                intent = new Intent(this, OCRActivity.class);
-//                startActivity(intent);
+                intent = new Intent(this, OCRActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.btn_quiz:
-//                intent = new Intent(this, QuizActivity.class);
-//                startActivity(intent);
+                intent = new Intent(this, QuizActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.btn_multi_line_translate:
-//                intent = new Intent(this, TranslateActivity.class);
-//                startActivity(intent);
+                intent = new Intent(this, TranslateActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.btn_favorite:
-//                intent = new Intent(this, FavoriteActivity.class);
+                intent = new Intent(this, FavoriteActivity.class);
+                startActivity(intent);
+                break;
+
+//            case R.id.btn_setting:
+//                intent = new Intent(this, SettingActivity.class);
 //                startActivity(intent);
-                break;
-
-            case R.id.btn_setting:
-                intent = new Intent(this, SettingActivity.class);
-                startActivity(intent);
-                break;
-
-            case R.id.btn_info:
-                intent = new Intent(this, InfoActivity.class);
-                startActivity(intent);
-                break;
+//                break;
+//
+//            case R.id.btn_info:
+//                intent = new Intent(this, InfoActivity.class);
+//                startActivity(intent);
+//                break;
         }
     }
 

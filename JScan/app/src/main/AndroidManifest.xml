@@ -37,7 +37,7 @@
 
         <activity android:name=".DetailActivity"
                   android:screenOrientation="portrait"
-                  android:label="@string/search_result_title">
+                  android:label="@string/detail_title">
         </activity>
 
         <activity android:name=".InfoActivity"
@@ -47,7 +47,27 @@
 
         <activity android:name=".SettingActivity"
                   android:screenOrientation="portrait"
-                  android:label="@string/infomation_title">
+                  android:label="@string/setting_title">
+        </activity>
+
+        <activity android:name=".Quiz.QuizActivity"
+                  android:screenOrientation="portrait"
+                  android:label="@string/quiz_title">
+        </activity>
+
+        <activity android:name=".FavoriteActivity"
+                  android:screenOrientation="portrait"
+                  android:label="@string/favorite_title">
+        </activity>
+
+        <activity android:name=".TranslateActivity"
+                  android:screenOrientation="portrait"
+                  android:label="@string/multi_translate_title">
+        </activity>
+
+        <activity android:name=".OCRActivity"
+                  android:screenOrientation="portrait"
+                  android:label="@string/multi_translate_title">
         </activity>
 
         <provider

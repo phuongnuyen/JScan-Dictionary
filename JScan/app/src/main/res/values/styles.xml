@@ -53,7 +53,6 @@
         <item name="android:textSize">@dimen/common_text_size</item>
         <item name="android:textColor">@color/dark_grey</item>
         <item name="android:lineSpacingMultiplier">1.5</item>
-        <!--<item name="android:fontFamily">sans-serif-light</item>-->
     </style>
 
     <style name="menu_tv_style">
@@ -70,6 +69,6 @@
         <item name="closeIcon">@drawable/ic_close</item>
         <item name="searchIcon">@drawable/ic_search</item>
         <item name="searchHintIcon">@drawable/ic_search</item>
+        <item name="android:textColor">@color/white_smoke</item>
     </style>
-
 </resources>
