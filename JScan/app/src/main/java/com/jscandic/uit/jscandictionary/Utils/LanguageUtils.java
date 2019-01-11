@@ -36,12 +36,13 @@ public class LanguageUtils {
     private static void setFlagIconID(){
         switch (curLanguage){
             case DEFAULT_LANGUAGE:
-            case ENGLISH_US:
-                flagIconResource = R.drawable.ic_flag_us;
-                break;
 
             case VIETNAMESE:
                 flagIconResource = R.drawable.ic_flag_vn;
+                break;
+
+            case ENGLISH_US:
+                flagIconResource = R.drawable.ic_flag_us;
                 break;
         }
     }
