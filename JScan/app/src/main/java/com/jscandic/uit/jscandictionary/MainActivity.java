@@ -67,6 +67,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         this.initWaveUI();
 
+        ThemeUtils.changeToTheme(this, ThemeUtils.THEME_RED);
+
         btnOCR.setOnClickListener(this);
         btnQuiz.setOnClickListener(this);
         btnMultiLineTranslate.setOnClickListener(this);
