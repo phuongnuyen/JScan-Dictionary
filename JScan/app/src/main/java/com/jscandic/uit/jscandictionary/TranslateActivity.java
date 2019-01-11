@@ -3,16 +3,21 @@ package com.jscandic.uit.jscandictionary;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import com.memetix.mst.language.Language;
-import com.memetix.mst.translate.Translate;
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
 
-public class TranslateActivity extends BaseActivity implements View.OnClickListener{
+public class TranslateActivity extends BaseActivity implements View.OnClickListener {
+    private static final String API_KEY = "AIzaSyDR-IjtvUJUqmtenBaS7j5bqe22T6RplsE";
+
+
     @BindView(R.id.btn_clear_all)
     Button btnClearAll;
     @BindView(R.id.btn_translate)
@@ -21,9 +26,6 @@ public class TranslateActivity extends BaseActivity implements View.OnClickListe
     EditText edtTextToTrans;
     @BindView(R.id.edt_result)
     EditText edtResult;
-
-    String txtInput;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -35,10 +37,10 @@ public class TranslateActivity extends BaseActivity implements View.OnClickListe
         actionBarFragment.setActionBarType(CustomActionBarFragment.SIMPLE_TITLE_TYPE,
                 getString(R.string.multi_translate_title));
 
-//        String ocrWord = getIntent().getStringExtra(OCRActivity.OCR_WORD_RESULT);
-//        if (ocrWord != null){
-//            edtTextToTrans.setText(ocrWord);
-//        }
+        String ocrWord = getIntent().getStringExtra(OCRActivity.OCR_WORD_RESULT);
+        if (ocrWord != null){
+            edtTextToTrans.setText(ocrWord);
+        }
 
         btnClearAll.setOnClickListener(this);
         btnTranslate.setOnClickListener(this);
@@ -63,38 +65,31 @@ public class TranslateActivity extends BaseActivity implements View.OnClickListe
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(edtTextToTrans.getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
 
+        final String inputText = edtTextToTrans.getText().toString();
+        final Handler textViewHandler = new Handler();
 
-        txtInput = edtTextToTrans.getText().toString();
-        class bgStuff extends AsyncTask<Void, Void, Void> {
-            String translatedText = "";
-
+        class GoogleTranslator extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... params) {
-                try {
-                    translatedText = translate(txtInput);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    translatedText = e.toString();
-                }
+                TranslateOptions options = TranslateOptions.newBuilder()
+                        .setApiKey(API_KEY)
+                        .build();
+                Translate translate = options.getService();
+                final Translation translation =
+                        translate.translate(inputText,
+                                Translate.TranslateOption.sourceLanguage("ja"),
+                                Translate.TranslateOption.targetLanguage("vi"));
+                textViewHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (edtResult != null) {
+                            edtResult.setText(translation.getTranslatedText());
+                        }
+                    }
+                });
                 return null;
             }
-
-            @Override
-            protected void onPostExecute(Void result) {
-                edtResult.setText(translatedText);
-                super.onPostExecute(result);
-            }
         }
-        edtResult.setText("");
-        new bgStuff().execute();
-    }
-
-    public String translate(String text) throws Exception{
-        // Set the Client ID / Client Secret once per JVM. It is set statically and applies to all services
-        Translate.setClientId("FAPP_AN");
-        Translate.setClientSecret("Oi5YL6qmXAVVxMvJt/rWqlYdTjKW71LDFz5bMFlC370=");
-        String translatedText = "";
-        translatedText = Translate.execute(text, Language.JAPANESE);
-        return translatedText;
+        new GoogleTranslator().execute();
     }
 }

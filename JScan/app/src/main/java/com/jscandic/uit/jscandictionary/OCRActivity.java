@@ -18,6 +18,8 @@ import android.widget.EditText;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.googlecode.tesseract.android.TessBaseAPI;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.*;
 
@@ -138,15 +140,11 @@ public class OCRActivity extends BaseActivity implements View.OnClickListener{
         File file = new File(_path);
         Uri outputFileUri = Uri.fromFile(file);
 
-//        final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//        intent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
-
-//        CropImage.activity(null)
-//                .setGuidelines(CropImageView.Guidelines.ON)
-//                .setMultiTouchEnabled(true)
-//                .setOutputUri(outputFileUri)
-//                .start(this);
-        //startActivityForResult(intent, CAMERA_CAPTURE);
+        CropImage.activity(null)
+                .setGuidelines(CropImageView.Guidelines.ON)
+                .setMultiTouchEnabled(true)
+                .setOutputUri(outputFileUri)
+                .start(this);
     }
 
     @Override

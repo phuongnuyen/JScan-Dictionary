@@ -70,6 +70,8 @@
                   android:label="@string/multi_translate_title">
         </activity>
 
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"/>
+
         <provider
                 android:name=".Database.DictContentProvider"
                 android:authorities="com.jscandic.uit.jscandictionary.Database"
